@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:4000";
+const baseUrl = "/api";
 
 function getAuthConfig() {
   const token = localStorage.getItem("token");
@@ -13,18 +13,18 @@ function getAuthConfig() {
 }
 
 export async function getcCars(params) {
-  const res = await axios.get(`${baseUrl}/api/vehicleRentals`, { params });
+  const res = await axios.get(`${baseUrl}/vehicleRentals`, { params });
   return res.data;
 }
 
 export async function getcCarById(id) {
-  const res = await axios.get(`${baseUrl}/api/vehicleRentals/${id}`);
+  const res = await axios.get(`${baseUrl}/vehicleRentals/${id}`);
   return res.data;
 }
 
 export async function createCar(payload) {
   const res = await axios.post(
-    `${baseUrl}/api/vehicleRentals`,
+    `${baseUrl}/vehicleRentals`,
     payload,
     getAuthConfig()
   );
@@ -33,7 +33,7 @@ export async function createCar(payload) {
 
 export async function updateCar(id, payload) {
   const res = await axios.put(
-    `${baseUrl}/api/vehicleRentals/${id}`,
+    `${baseUrl}/vehicleRentals/${id}`,
     payload,
     getAuthConfig()
   );
@@ -42,18 +42,18 @@ export async function updateCar(id, payload) {
 
 export async function deleteCar(id) {
   const res = await axios.delete(
-    `${baseUrl}/api/vehicleRentals/${id}`,
+    `${baseUrl}/vehicleRentals/${id}`,
     getAuthConfig()
   );
   return res.data;
 }
 
 export async function registerUser(payload) {
-  const res = await axios.post(`${baseUrl}/api/register`, payload);
+  const res = await axios.post(`${baseUrl}/register`, payload);
   return res.data;
 }
 
 export async function loginUser(payload) {
-  const res = await axios.post(`${baseUrl}/api/login`, payload);
+  const res = await axios.post(`${baseUrl}/login`, payload);
   return res.data;
 }
