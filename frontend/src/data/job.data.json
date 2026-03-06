@@ -1,0 +1,39 @@
+[
+  {
+    "vehicleModel": "Toyota Camry",
+    "category": "Economy",
+    "description": "Reliable sedan for daily commuting.",
+    "agency": {
+      "name": "Nordic Car Rentals",
+      "contactEmail": "info@nordicrentals.fi",
+      "fleetSize": 120
+    },
+    "location": {
+      "city": "Helsinki",
+      "state": "Uusimaa"
+    },
+    "dailyPrice": 65,
+    "availabilityStatus": "available",
+    "bookingDeadline": "2026-05-01T00:00:00.000Z",
+    "insurancePolicy": "Full coverage insurance included."
+  },
+  {
+    "vehicleModel": "BMW X5",
+    "category": "Luxury",
+    "description": "Premium SUV with advanced comfort and safety features.",
+    "agency": {
+      "name": "Elite Drive",
+      "contactEmail": "support@elitedrive.fi",
+      "fleetSize": 40
+    },
+    "location": {
+      "city": "Espoo",
+      "state": "Uusimaa"
+    },
+    "dailyPrice": 150,
+    "availabilityStatus": "available",
+    "bookingDeadline": "2026-04-20T00:00:00.000Z",
+    "insurancePolicy": "Premium insurance package included."
+  }
+]
+
