@@ -23,6 +23,9 @@ app.use(requestLogger);
 app.use('/api/vehicleRentals', vehicleRentalRouter);
 app.use('/api', userRouter);
 
+
+app.use(express.static(path.join(__dirname, 'view')));
+
 app.get('/{*splat}', (req, res) => {
   res.sendFile(path.join(__dirname, 'view', 'index.html'));
 });
@@ -34,3 +37,4 @@ app.use(errorHandler);
 
 
 module.exports = app;
+// 11
