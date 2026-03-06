@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+
 import { registerUser, loginUser } from "../api/api";
 
 export default function useAuth() {
@@ -12,10 +13,8 @@ export default function useAuth() {
 
     try {
       const data = await registerUser(payload);
-
       const result = data?.user ?? data ?? null;
       setUser(result);
-
       return result;
     } catch (e) {
       setError(e?.response?.data?.message || "Failed to register");
@@ -48,18 +47,11 @@ export default function useAuth() {
     }
   }, []);
 
-  const logout = useCallback(() => {
-    localStorage.removeItem("token");
-    setUser(null);
-    setError(null);
-  }, []);
-
   return {
     user,
     loading,
     error,
     register,
     login,
-    logout,
   };
 }

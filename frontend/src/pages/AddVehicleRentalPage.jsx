@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import useCars from "../hooks/UseCar";
 
 const AddVehicleRentalPage = () => {
   const { addCar, loading, error } = useCars();
+    const navigate = useNavigate();
+
   const [vehicleModel, setVehicleModel] = useState("");
   const [category, setCategory] = useState("Economy");
   const [description, setDescription] = useState("");
@@ -55,6 +58,7 @@ const AddVehicleRentalPage = () => {
       setAvailabilityStatus("available");
       setBookingDeadline("");
       setInsurancePolicy("");
+      navigate(`/`);
 
     } catch (err) {
  setMessage("Failed to add vehicle rental");
