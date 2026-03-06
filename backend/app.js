@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const vehicleRentalRouter = require('./routes/vehicleRentalRouter');
 const { unknownEndpoint, errorHandler, requestLogger } = require('./middleware/customMiddleware');
 const userRouter = require('./routes/userRouter');
@@ -22,8 +23,14 @@ app.use(requestLogger);
 app.use('/api/vehicleRentals', vehicleRentalRouter);
 app.use('/api', userRouter);
 
+app.get('/{*splat}', (req, res) => {
+  res.sendFile(path.join(__dirname, 'view', 'index.html'));
+});
+
 // Error handling
 app.use(unknownEndpoint);
 app.use(errorHandler);
+
+
 
 module.exports = app;
