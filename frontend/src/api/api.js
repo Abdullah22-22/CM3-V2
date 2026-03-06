@@ -29,3 +29,13 @@ export async function deleteCar(id) {
   return res.data;
 }
 
+export async function registerUser(payload) {
+  const res = await axios.post(`${baseUrl}/api/register`, payload);
+  return res.data;
+}
+
+export async function loginUser(payload) {
+  const res = await axios.post(`${baseUrl}/api/login`, payload);
+  return res.data;
+}
+
