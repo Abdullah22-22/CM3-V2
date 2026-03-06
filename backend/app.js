@@ -24,17 +24,17 @@ app.use('/api/vehicleRentals', vehicleRentalRouter);
 app.use('/api', userRouter);
 
 
-app.use(express.static(path.join(__dirname, 'view')));
 
-app.get('/{*splat}', (req, res) => {
-  res.sendFile(path.join(__dirname, 'view', 'index.html'));
-});
+app.use(express.static(path.join(__dirname, 'view')));
 
 // Error handling
 app.use(unknownEndpoint);
 app.use(errorHandler);
 
+app.use((req, res) => {
+  res.sendFile(__dirname + '/view/index.html');
+});
 
 
 module.exports = app;
-// 11
+j
